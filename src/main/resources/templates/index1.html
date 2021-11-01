@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Details System</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+ >
+</head>
+<body>
+
+<div  class ="container my-2">
+
+<h1>Employee Details List</h1>
+<a th:href="@{/showNewEmployeeDetailsForm}" class ="btn btn-primary btn-sm mb-3"> Add Employee</a>
+<table  border="1" class ="table table-striped table-responsive-md">
+<thead>
+<tr>
+
+<th>Employee Phone Number</th>
+<th>Employee  Address</th>
+<th>Employee Gender</th>
+<th>Employee Date Of Birth</th>
+<th>Actions</th>
+
+</tr>
+</thead>
+<tbody>
+<tr th:each="employeedetails : ${listEmployees}">
+<td th:text="${employeedetails.phoneno}"></td>
+<td th:text="${employeedetails.address}"></td>
+<td th:text="${employeedetails.gender}"></td>
+<td th:text="${employeedetails.birthOfDate}"></td>
+
+<td> 
+<a th:href="@{/showFormForUpdatedetails/{id}(id=${employeedetails.id})}" class ="btn btn-primary"> Update</a>
+<a th:href="@{/deleteEmployeeDetails/{id}(id=${employeedetails.id})}" class ="btn btn-danger"> Delete</a>
+</td>
+
+</tr>
+
+</tbody>
+
+		</table>
+		</div>
+
+
+</body>
+
+</html>

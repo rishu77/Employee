@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Details System</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous">
+</head>
+<body>
+<div class ="container">
+<h1>Employee Details System</h1>
+
+<hr>
+<h2> Save Employee Details</h2>
+
+
+<form action= "#" th:action="@{/saveEmployeeDetails}" th:obect ="${employeedetails}" 
+method="post">
+<input type ="text" th:field="*{employeedetails.phoneno}"
+ placeholder="Employee Phone Number" class= "form-control mb-4 col-4">
+
+<input type ="text" th:field="*{employeedetails.address}"
+ placeholder="Employee Address" class= "form-control mb-4 col-4">
+ 
+<input type ="text" th:field="*{employeedetails.gender}"
+ placeholder="Employee Gender" class= "form-control mb-4 col-4">
+
+
+<input type ="text" th:field="*{employeedetails.birthOfDate}"
+ placeholder="Employee Date Of Birth" class= "form-control mb-4 col-4">
+
+<button type="submit"  class ="btn btn-info col-2 md-3">Save Employee Details</button>
+</form>
+</div>
+</body>
+</html>
